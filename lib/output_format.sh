@@ -10,14 +10,18 @@ RPROMPT=""
 render_tpl_with_vars() {
   local tpl_file="$1"
   while IFS= read -r line || [[ -n "$line" ]]; do
-    # Replace with and without spaces (to be forgiving)
-    line="${line//'{{ TIMESTAMP }}'/$EXPORT_DATE}"
-    line="${line//'{{TIMESTAMP}}'/$EXPORT_DATE}"
-    line="${line//'{{ VERSION }}'/$VERSION}"
-    line="${line//'{{VERSION}}'/$VERSION}"
-    line="${line//'{{ badges }}'/$BADGES}"
+    # Replace all possible badge variable patterns (case and space insensitive)
+    line="${line//'{{BADGES}}'/$BADGES}"
+    line="${line//'{{ BADGES }}'/$BADGES}"
     line="${line//'{{badges}}'/$BADGES}"
+    line="${line//'{{ badges }}'/$BADGES}"
     line="${line//'@@BADGES@@'/$BADGES}"
+    line="${line//'@@badges@@'/$BADGES}"
+    # Same for VERSION and TIMESTAMP
+    line="${line//'{{VERSION}}'/$VERSION}"
+    line="${line//'{{ VERSION }}'/$VERSION}"
+    line="${line//'{{TIMESTAMP}}'/$EXPORT_DATE}"
+    line="${line//'{{ TIMESTAMP }}'/$EXPORT_DATE}"
     echo "$line"
   done < "$tpl_file"
 }
