@@ -1,6 +1,26 @@
 [
   {
     "User": "raymonepping",
+    "Name": "homebrew-repository-export-cli",
+    "URL": "https://github.com/raymonepping/homebrew-repository-export-cli",
+    "Description": "",
+    "Stars": "0",
+    "Primary Language": "Shell",
+    "Size (KB)": "0",
+    "Created": "2025-07-23T12:56:07Z",
+    "Last Push": "2025-07-23T13:05:10Z",
+    "Default Branch": "main",
+    "Visibility": "PUBLIC",
+    "Release Tag": "v1.0.1",
+    "Last Contributor": "Raymon Epping",
+    "Last Commit Message": "🔖 repository-export-cli: release v1.0.1",
+    "README Present": "-",
+    "Branch Count": "3",
+    "Has Workflows": "-",
+    "Measured Size (KB)": "300"
+  },
+  {
+    "User": "raymonepping",
     "Name": "homebrew-sanity-check-cli",
     "URL": "https://github.com/raymonepping/homebrew-sanity-check-cli",
     "Description": "",
