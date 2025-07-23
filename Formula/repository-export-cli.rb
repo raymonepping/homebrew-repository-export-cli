@@ -1,34 +1,36 @@
-class BrewBrainCli < Formula
-
-  desc "Audit, document, and manage your Homebrew CLI arsenal with one meta-tool"
-  homepage "https://github.com/raymonepping/brew_brain_cli"
-  url "https://github.com/raymonepping/homebrew-brew-brain-cli/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "26e59daa3c7214c2d4c195d8a52b75c801e0b3b7305b256d583faf40c61df260"
+class RepositoryExportCli < Formula
+  desc "Export, document, and manage your GitHub repositories with a single CLI"
+  homepage "https://github.com/raymonepping/homebrew-repository-export-cli"
+  url "https://github.com/raymonepping/homebrew-repository-export-cli/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "<REPLACE_WITH_SHA256>"
   license "MIT"
-  version "1.3.0"
+  version "1.0.0"
 
   depends_on "bash"
   depends_on "jq"
+  depends_on "gh" # For GitHub API
 
   def install
-    bin.install "bin/brew_brain" => "brew_brain"
+    bin.install "bin/repository_export" => "repository_export"
     share.install Dir["lib"], Dir["tpl"]
   end
 
   def caveats
     <<~EOS
       To get started, run:
-        brew_brain --help
+        repository_export --help
 
-      This CLI helps audit, document, and version-manage your custom Homebrew CLI arsenal.
+      This CLI exports and documents your GitHub repositories to Markdown, CSV, or JSON.
 
       Example usage:
-        brew_brain --output markdown --output-file arsenal
-        brew_brain checkup
+        repository_export --output md --output-file repos.md
+        repository_export --output csv --output-dir ./exports
+
+      Docs & updates: https://github.com/raymonepping/homebrew-repository-export-cli
     EOS
   end
 
   test do
-    assert_match "brew_brain", shell_output("#{bin}/brew_brain --help")
+    assert_match "repository_export", shell_output("#{bin}/repository_export --help")
   end
 end
