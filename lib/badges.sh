@@ -3,16 +3,20 @@ set -euo pipefail
 
 build_badges() {
   local repo="${1:-raymonepping/homebrew-repository-export-cli}"
-  local date_str="${2:-$(date '+%Y-%m-%d')}"
-  local version="${3:-v1.0.0}"
+  local version="${2:-v1.0.0}"
+  local brew_tap="${3:-raymonepping/repository-export-cli}"
 
-  # Remove leading 'v' from version for badge
+  # Strip leading 'v' from version for badge display
   local version_clean="${version#v}"
 
+  # Homebrew install link
+  local brew_link="https://brew.sh"
+
+  # Custom install command (for copy-paste clarity)
+  local install_cmd="brew install ${brew_tap}"
+
   cat <<EOF
-[![Exported](https://img.shields.io/badge/Exported-${date_str}-informational?style=flat-square)](#)
-[![Version](https://img.shields.io/badge/Version-${version_clean}-blue?style=flat-square)](#)
-[![Stars](https://img.shields.io/github/stars/${repo}?style=social)](https://github.com/${repo}/stargazers)
-[![CI](https://github.com/${repo}/actions/workflows/ci.yml/badge.svg)](https://github.com/${repo}/actions)
+[![brew install](https://img.shields.io/badge/brew--install-success-green?logo=homebrew&style=flat-square)](${brew_link} "Run: $install_cmd")
+[![version](https://img.shields.io/badge/version-${version_clean}-blue?style=flat-square")](https://github.com/${repo}/releases)
 EOF
 }
