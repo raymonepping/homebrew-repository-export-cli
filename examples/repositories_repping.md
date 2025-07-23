@@ -3,16 +3,16 @@
 Generated: {{TIMESTAMP}} &nbsp;|&nbsp; Version: {{VERSION}}
 
 [![Exported](https://img.shields.io/badge/Exported-2025-07-23-informational?style=flat-square)](#)
-[![Version](https://img.shields.io/badge/Version-1.0.1-blue?style=flat-square)](#)
-[![Stars](https://img.shields.io/github/stars/raymonepping/repository_export?style=social)](https://github.com/raymonepping/repository_export/stargazers)
-[![CI](https://github.com/raymonepping/repository_export/actions/workflows/ci.yml/badge.svg)](https://github.com/raymonepping/repository_export/actions)
+[![Version](https://img.shields.io/badge/Version-1.0.2-blue?style=flat-square)](#)
+[![Stars](https://img.shields.io/github/stars/raymonepping/homebrew-repository-export-cli?style=social)](https://github.com/raymonepping/homebrew-repository-export-cli/stargazers)
+[![CI](https://github.com/raymonepping/homebrew-repository-export-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/raymonepping/homebrew-repository-export-cli/actions)
 
 ---
 ## 🧾 Repository Export Table
 
 | User | Name | URL | Description | Stars | Primary Language | Size (KB) | Created | Last Push | Default Branch | Visibility | Release Tag | Last Contributor | Last Commit Message | README Present | Branch Count | Has Workflows | Measured Size (KB) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| raymonepping | homebrew-repository-export-cli | https://github.com/raymonepping/homebrew-repository-export-cli |  | 0 | Shell | 0 | 2025-07-23T12:56:07Z | 2025-07-23T13:05:10Z | main | PUBLIC | v1.0.1 | Raymon Epping | 🔖 repository-export-cli: release v1.0.1 | - | 3 | - | 300 |
+| raymonepping | homebrew-repository-export-cli | https://github.com/raymonepping/homebrew-repository-export-cli |  | 1 | Shell | 0 | 2025-07-23T12:56:07Z | 2025-07-23T13:31:23Z | main | PUBLIC | v1.0.2 | Raymon Epping | 🔖 repository-export-cli: release v1.0.2 | - | 3 | - | 284 |
 | raymonepping | homebrew-sanity-check-cli | https://github.com/raymonepping/homebrew-sanity-check-cli |  | 1 | Shell | 36 | 2025-07-22T10:54:24Z | 2025-07-22T13:33:01Z | main | PUBLIC | v1.1.5 | Raymon Epping | 🔖 sanity-check-cli: release v1.1.5 | - | 3 | - | - |
 | raymonepping | homebrew-brew-brain-cli | https://github.com/raymonepping/homebrew-brew-brain-cli |  | 1 | Shell | 103 | 2025-07-20T20:10:02Z | 2025-07-21T13:58:20Z | main | PUBLIC | v1.3.0 | Raymon Epping | 21/07/2025 - Updated configuration and fixed bugs | - | 3 | - | - |
 | raymonepping | homebrew-self-doc-gen-cli | https://github.com/raymonepping/homebrew-self-doc-gen-cli |  | 1 | Shell | 47 | 2025-07-15T17:34:31Z | 2025-07-20T08:13:23Z | main | PUBLIC | v1.2.0 | Raymon Epping | 🔖 self-doc-gen-cli: release v1.2.0 | ✅ | 3 | - | - |
