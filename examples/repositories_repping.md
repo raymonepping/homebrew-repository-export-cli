@@ -1,15 +1,16 @@
 # 🧾 Repository Export Report
 
-Generated: 2025-07-23 &nbsp;|&nbsp; Version: 1.0.6
+Generated: 2025-07-23 &nbsp;|&nbsp; Version: 1.0.7
 
-{{BADGES}}
+[![brew install](https://img.shields.io/badge/brew--install-success-green?logo=homebrew{{BADGES}}style=flat-square)](https://brew.sh "Run: brew install raymonepping/repository-export-cli")
+[![version](https://img.shields.io/badge/version-1.0.7-blue?style=flat-square)](https://github.com/raymonepping/homebrew-repository-export-cli/releases)
 
 ---
 ## 🧾 Repository Export Table
 
 | User | Name | URL | Description | Stars | Primary Language | Size (KB) | Created | Last Push | Default Branch | Visibility | Release Tag | Last Contributor | Last Commit Message | README Present | Branch Count | Has Workflows | Measured Size (KB) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| raymonepping | homebrew-repository-export-cli | https://github.com/raymonepping/homebrew-repository-export-cli |  | 1 | Shell | 53 | 2025-07-23T12:56:07Z | 2025-07-23T14:06:57Z | main | PUBLIC | v1.0.7 | Raymon Epping | 🔖 repository-export-cli: release v1.0.7 | - | 3 | - | - |
+| raymonepping | homebrew-repository-export-cli | https://github.com/raymonepping/homebrew-repository-export-cli |  | 1 | Shell | 53 | 2025-07-23T12:56:07Z | 2025-07-23T14:12:32Z | main | PUBLIC | v1.0.8 | Raymon Epping | 🔖 repository-export-cli: release v1.0.8 | - | 3 | - | - |
 | raymonepping | homebrew-sanity-check-cli | https://github.com/raymonepping/homebrew-sanity-check-cli |  | 1 | Shell | 36 | 2025-07-22T10:54:24Z | 2025-07-22T13:33:01Z | main | PUBLIC | v1.1.5 | Raymon Epping | 🔖 sanity-check-cli: release v1.1.5 | - | 3 | - | - |
 | raymonepping | homebrew-brew-brain-cli | https://github.com/raymonepping/homebrew-brew-brain-cli |  | 1 | Shell | 103 | 2025-07-20T20:10:02Z | 2025-07-21T13:58:20Z | main | PUBLIC | v1.3.0 | Raymon Epping | 21/07/2025 - Updated configuration and fixed bugs | - | 3 | - | - |
 | raymonepping | homebrew-self-doc-gen-cli | https://github.com/raymonepping/homebrew-self-doc-gen-cli |  | 1 | Shell | 47 | 2025-07-15T17:34:31Z | 2025-07-20T08:13:23Z | main | PUBLIC | v1.2.0 | Raymon Epping | 🔖 self-doc-gen-cli: release v1.2.0 | ✅ | 3 | - | - |
