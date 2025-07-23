@@ -2,6 +2,6 @@
 
 Generated: {{TIMESTAMP}} &nbsp;|&nbsp; Version: {{VERSION}}
 
-{{ badges }}
+{{BADGES}}
 
 ---
