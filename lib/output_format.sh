@@ -4,7 +4,7 @@ set -euo pipefail
 RPROMPT=""
 
 # Source badges builder (adjust path as needed)
-source "$(dirname "$0")/../lib/badges.sh"
+# source "$(dirname "$0")/../lib/badges.sh"
 
 # --- Helper: Render a template with variable replacement ---
 render_tpl_with_vars() {
