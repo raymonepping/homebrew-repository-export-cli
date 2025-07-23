@@ -1,0 +1,32 @@
+{
+  "username": [
+    "raymonepping"
+  ],
+   "username": [ 
+      "raymonepping" 
+  ],
+    "delimiter": [ 
+      ";" 
+  ], 
+  "fields": [
+    "name",
+    "url",
+    "description",
+    "stargazerCount",
+    "primaryLanguage.name",
+    "diskUsage",
+    "createdAt",
+    "pushedAt",
+    "defaultBranchRef.name",
+    "visibility",
+    "latestRelease.tagName"
+  ],
+  "custom": [
+    "lastContributor",
+    "lastCommitMessage",
+    "readmePresent",
+    "branchCount",
+    "hasWorkflows",
+    "measuredSizeKb"    
+  ]
+}

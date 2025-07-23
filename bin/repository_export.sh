@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+VERSION="1.0.0"
+TOOL_NAME="repository_export"
+HOMEBREW_PREFIX="$(brew --prefix 2>/dev/null || true)"
+
+RPROMPT=""
+
+# ---- Lib/Tpl Discovery ----
+POSSIBLE_LIB_DIRS=(
+  "$HOMEBREW_PREFIX/share/${TOOL_NAME}/lib"
+  "$HOMEBREW_PREFIX/opt/${TOOL_NAME}/share/${TOOL_NAME}/lib"
+  "./lib"
+)
+LIB_DIR=""
+for d in "${POSSIBLE_LIB_DIRS[@]}"; do
+  [[ -d "$d" ]] && LIB_DIR="$d" && break
+done
+[[ -z "$LIB_DIR" ]] && echo "❌ Could not find lib/ directory." && exit 1
+
+POSSIBLE_TPL_DIRS=(
+  "$HOMEBREW_PREFIX/share/${TOOL_NAME}/tpl"
+  "$HOMEBREW_PREFIX/opt/${TOOL_NAME}/share/${TOOL_NAME}/tpl"
+  "./tpl"
+)
+TPL_DIR=""
+for d in "${POSSIBLE_TPL_DIRS[@]}"; do
+  [[ -d "$d" ]] && TPL_DIR="$d" && break
+done
+[[ -z "$TPL_DIR" ]] && echo "❌ Could not find tpl/ directory." && exit 1
+
+# ---- Load helper libraries ----
+source "$LIB_DIR/argparse.sh"
+source "$LIB_DIR/utils.sh"
+source "$LIB_DIR/pretty.sh"
+source "$LIB_DIR/github_export.sh"
+source "$LIB_DIR/output_format.sh"
+
+# ---- Dependency check ----
+check_dependencies jq gh git du
+
+# ---- Main workflow ----
+main() {
+  # echo "📦 GitHub Repository Export CLI v$VERSION"
+  parse_args "$@"
+
+  mkdir -p "$OUTPUT_DIR"
+  OUTFILE_PATH="${OUTPUT_DIR}/${OUTPUT_FILE}"
+  TMPDIR="$(mktemp -d)"
+  DATA_JSON="$TMPDIR/data.json"
+
+  start_timer
+
+  # Load config + build pretty label map
+  [[ ! -f "$CONFIG_FILE" ]] && echo "❌ Config file not found: $CONFIG_FILE" && exit 1
+  build_pretty_labels "$CONFIG_FILE"
+
+  mapfile -t USERS < <(jq -r '.username[]' "$CONFIG_FILE")
+  [[ "${#USERS[@]}" -eq 0 ]] && echo "❌ No usernames found in config." && exit 1
+
+  for user in "${USERS[@]}"; do
+    collect_repo_data "$user" "$TMPDIR" "$DATA_JSON" "$CONFIG_FILE"
+  done
+
+  render_output "$OUTPUT_FORMAT" "$OUTFILE_PATH" "$DATA_JSON"
+
+  stop_timer
+
+  echo -e "\n✅ \033[1;32mExport complete:\033[0m $OUTFILE_PATH (${OUTPUT_FORMAT})"
+  rm -rf "$TMPDIR"
+}
+
+main "$@"

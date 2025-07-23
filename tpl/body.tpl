@@ -1,0 +1,3 @@
+## 🧾 Repository Export Table
+
+{{ table }}
