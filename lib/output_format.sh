@@ -61,7 +61,7 @@ render_output() {
 
   # Build badges string
   # BADGES="$(build_badges "$GITHUB_REPO" "$EXPORT_DATE" "$VERSION")"
-  BADGES="$(build_badges "$GITHUB_REPO" "$VERSION" "$BREW_TAP")"
+  BADGES="$(build_badges "$GITHUB_REPO" "$VERSION")"
 
   # --- Markdown / MD Output ---
   if [[ "$format" =~ ^(markdown|md)$ ]]; then
