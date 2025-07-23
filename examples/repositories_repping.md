@@ -1,4 +1,14 @@
 # 🧾 Repository Export Report
+Generated: 2025-07-23  |  Version: 1.0.1
+[![Exported](https://img.shields.io/badge/Exported-2025-07-23-informational?style=flat-square)](#)
+[![Version](https://img.shields.io/badge/Version-1.0.1-blue?style=flat-square)](#)
+[![Stars](https://img.shields.io/github/stars/raymonepping/repository_export?style=social)](https://github.com/raymonepping/repository_export/stargazers)
+[![CI](https://github.com/raymonepping/repository_export/actions/workflows/ci.yml/badge.svg)](https://github.com/raymonepping/repository_export/actions)
+---
+
+wrong .. 
+
+# 🧾 Repository Export Report
 
 Generated: {{TIMESTAMP}} &nbsp;|&nbsp; Version: {{VERSION}}
 
