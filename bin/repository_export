@@ -2,8 +2,11 @@
 set -euo pipefail
 
 # shellcheck disable=SC2034
-VERSION="1.0.9"
-TOOL_NAME="repository_export"
+VERSION="1.0.10"
+# TOOL_NAME="repository_export"
+TOOL_NAME_DASH="repository-export-cli"
+TOOL_NAME_UNDERSCORE="repository_export_cli"
+
 GITHUB_REPO="raymonepping/homebrew-repository-export-cli"
 
 HOMEBREW_PREFIX="$(brew --prefix 2>/dev/null || true)"
@@ -12,10 +15,13 @@ RPROMPT=""
 
 # ---- Lib/Tpl Discovery ----
 POSSIBLE_LIB_DIRS=(
-  "$HOMEBREW_PREFIX/share/${TOOL_NAME}/lib"
-  "$HOMEBREW_PREFIX/opt/${TOOL_NAME}/share/${TOOL_NAME}/lib"
+  "$HOMEBREW_PREFIX/share/${TOOL_NAME_DASH}/lib"
+  "$HOMEBREW_PREFIX/share/${TOOL_NAME_UNDERSCORE}/lib"
+  "$HOMEBREW_PREFIX/opt/${TOOL_NAME_DASH}/share/${TOOL_NAME_DASH}/lib"
+  "$HOMEBREW_PREFIX/opt/${TOOL_NAME_UNDERSCORE}/share/${TOOL_NAME_UNDERSCORE}/lib"
   "./lib"
 )
+
 LIB_DIR=""
 for d in "${POSSIBLE_LIB_DIRS[@]}"; do
   [[ -d "$d" ]] && LIB_DIR="$d" && break
@@ -23,10 +29,13 @@ done
 [[ -z "$LIB_DIR" ]] && echo "❌ Could not find lib/ directory." && exit 1
 
 POSSIBLE_TPL_DIRS=(
-  "$HOMEBREW_PREFIX/share/${TOOL_NAME}/tpl"
-  "$HOMEBREW_PREFIX/opt/${TOOL_NAME}/share/${TOOL_NAME}/tpl"
+  "$HOMEBREW_PREFIX/share/${TOOL_NAME_DASH}/tpl"
+  "$HOMEBREW_PREFIX/share/${TOOL_NAME_UNDERSCORE}/tpl"
+  "$HOMEBREW_PREFIX/opt/${TOOL_NAME_DASH}/share/${TOOL_NAME_DASH}/tpl"
+  "$HOMEBREW_PREFIX/opt/${TOOL_NAME_UNDERSCORE}/share/${TOOL_NAME_UNDERSCORE}/tpl"
   "./tpl"
 )
+
 TPL_DIR=""
 for d in "${POSSIBLE_TPL_DIRS[@]}"; do
   [[ -d "$d" ]] && TPL_DIR="$d" && break
