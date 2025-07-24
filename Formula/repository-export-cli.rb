@@ -1,10 +1,10 @@
 class RepositoryExportCli < Formula
   desc "Export, document, and manage your GitHub repositories with a single CLI"
   homepage "https://github.com/raymonepping/homebrew-repository-export-cli"
-  url "https://github.com/raymonepping/homebrew-repository-export-cli/archive/refs/tags/v1.0.10.tar.gz"
-  sha256 "9a9a89fec7b7f5a777cfa3a924f332d557051f194676669a792a7a6907b0f933"
+  url "https://github.com/raymonepping/homebrew-repository-export-cli/archive/refs/tags/v1.0.11.tar.gz"
+  sha256 "113d896b9f5fbe0321ad87688a95bcd4e6e2f84b5caf5414c435146c966eaa7e"
   license "MIT"
-  version "1.0.10"
+  version "1.0.11"
 
   depends_on "bash"
   depends_on "jq"
