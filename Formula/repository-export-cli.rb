@@ -12,7 +12,7 @@ class RepositoryExportCli < Formula
 
   def install
     bin.install "bin/repository_export" => "repository_export"
-    share.install Dir["lib"], Dir["tpl"]
+    pkgshare.install %w[lib tpl]
   end
 
   def caveats
